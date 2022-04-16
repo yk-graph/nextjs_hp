@@ -1,13 +1,15 @@
-import React from 'react'
+import Link from 'next/link'
 
 const Post = ({ post }) => {
   return (
     <li>
       <span>{post.id}</span>
       {' : '}
-      <span className="text-blue-500 hover:bg-gray-200 border-b border-blue-500 cursor-pointer">
-        {post.title}
-      </span>
+      <Link href={`/posts/${post.id}`}>
+        <a className="text-blue-500 hover:bg-gray-200 border-b border-blue-500 cursor-pointer">
+          {post.title}
+        </a>
+      </Link>
     </li>
   )
 }
