@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Layout from '../../components/Layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 
-const Post = ({ post }) => {
+export default function Post({ post }) {
   if (!post) {
     return <div>Loaging...</div>
   }
@@ -36,8 +36,6 @@ const Post = ({ post }) => {
     </Layout>
   )
 }
-
-export default Post
 
 export async function getStaticPaths() {
   const paths = await getAllPostIds()
