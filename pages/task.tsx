@@ -18,7 +18,7 @@ const Task: React.FC<Props> = ({ tasks }) => {
     <Layout title="task page">
       <ul className="m-10">
         {tasks.map((task) => (
-          <li>
+          <li key={task.id}>
             <span>{task.id}</span>
             {" : "}
             <Link href={`/tasks/${task.id}`}>
