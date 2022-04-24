@@ -1,4 +1,4 @@
-import { db } from "@/firebase";
+import { db } from "@/firebase/nodeApp";
 
 export const getTasks = async () => {
   const taskRef = await db.collection("tasks").get();
