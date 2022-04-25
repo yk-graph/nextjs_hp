@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 import Layout from "@/components/Layout";
@@ -16,6 +17,25 @@ type Props = {
 const Tasks: React.FC<Props> = ({ task }) => {
   return (
     <Layout title={task.title}>
+      <NextSeo
+        title={task.title}
+        description={task.description}
+        openGraph={{
+          url: "https://firebasestorage.googleapis.com/v0/b/testmeetrun.appspot.com/o/events%2Fdemo1.jpeg?alt=media&token=57b5cfb7-6f44-4144-9c7f-bac3118ae168",
+          title: task.title,
+          description: task.description,
+          images: [
+            {
+              url: "https://firebasestorage.googleapis.com/v0/b/testmeetrun.appspot.com/o/events%2Fdemo1.jpeg?alt=media&token=57b5cfb7-6f44-4144-9c7f-bac3118ae168",
+              width: 800,
+              height: 600,
+              alt: `${task.title}のコンテンツ`,
+              type: "image/jpeg",
+            },
+          ],
+          site_name: "SiteName",
+        }}
+      />
       <p className="m-4">
         {"ID : "}
         {task.id}
