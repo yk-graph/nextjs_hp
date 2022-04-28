@@ -71,7 +71,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getTaskIds();
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
